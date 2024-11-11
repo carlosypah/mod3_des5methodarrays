@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <input type="text" id="input1" /> <button id="agregar">Agregar</button>
+    <ul id="lista"></ul>
+
+    <script>
+      invitados = [];
+      botoncito = document.getElementById("agregar");
+      input1 = document.getElementById("input1");
+      lista = document.getElementById("lista");
+
+      botoncito.addEventListener("click", function () {
+        sumarElemento();
+      });
+      input1.addEventListener("keypress", function () {
+        if (event.key === "Enter") {
+          sumarElemento();
+        }
+      });
+
+      function sumarElemento() {
+        invitados.push(document.getElementById("input1").value);
+        document.getElementById("input1").value = "";
+
+        let html = "";
+        for (let ele of invitados) {
+          html += `<li>${ele}</li>`;
+        }
+        lista.innerHTML = html;
+      }
+    </script>
+  </body>
+</html>

@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <h2>Task List</h2>
+    <label for="taskName"> Nueva Tarea: </label>
+    <input type="text" id="taskName" />
+    <button id="addTask">Agregar tarea</button>
+    <br />
+    <h4>Tasks</h4>
+    <ul id="taskList"></ul>
+
+    <script>
+      tasks = [];
+      addTask = document.getElementById("addTask");
+      taskName = document.getElementById("taskName");
+      taskList = document.getElementById("taskList");
+
+      addTask.addEventListener("click", function () {
+        addNewTask();
+      });
+
+      taskName.addEventListener("keypress", function () {
+        if (event.key === "Enter") {
+          addNewTask();
+        }
+      });
+
+      function addNewTask() {
+        html = "";
+        tasks.push(taskName.value);
+
+        let index = 0;
+        for (let t of tasks) {
+          html += `<li><p> ${t} <button id='${index}' onclick='deleteTask(${index})' >Borrar tarea</button> </li>`;
+          index++;
+        }
+        taskName.value = "";
+        taskList.innerHTML = html;
+      }
+
+      function deleteTask(indexTask) {
+        html = "";
+        console.log("indexTask: " + indexTask);
+        console.log(tasks);
+        tasks.splice(indexTask, 1);
+        console.log(tasks);
+
+        let index = 0;
+        for (let t of tasks) {
+          html += `<li><p> ${t} <button id='${index}' onclick='deleteTask(${index})' >Borrar tarea</button> </li>`;
+          index++;
+        }
+
+        taskList.innerHTML = html;
+      }
+    </script>
+  </body>
+</html>
