@@ -3,10 +3,53 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Document</title>
+    <title>Todo List</title>
+    <script
+      src="https://kit.fontawesome.com/57c4d9db44.js"
+      crossorigin="anonymous"
+    ></script>
+    <link
+      rel="shortcut icon"
+      href="./assets/imgs/ico.png"
+      type="image/x-icon"
+    />
+    <link rel="stylesheet" href="./assets/css/style.css" />
   </head>
   <body>
-    <script>
+    <section id="nueva-tarea">
+      <h2>Todo List</h2>
+      <label for="input-tarea">Nueva tarea</label>
+      <input type="text" id="input-tarea" />
+      <button id="button-agregar">Agregar</button>
+    </section>
+    <section id="contador-tareas">
+      <label for="strong-total">Tareas totales: </label
+      ><strong id="strong-total">0</strong>
+      <label for="strong-realizadas">Tareas completadas: </label
+      ><strong id="strong-realizadas">0</strong>
+    </section>
+    <section id="lista-tareas">
+      <table id="tabla-tareas">
+        <tr>
+          <th>Completar</th>
+          <th>Id</th>
+          <th>Tarea</th>
+          <th>Borrar</th>
+        </tr>
+        <!-- Este tr debe ser replicado por cada tarea (pendiente) -->
+        <tr>
+          <td><input type="checkbox" id="chb" /></td>
+          <td><label id="id">22</label></td>
+          <td><label id="tarea">Tarea 1</label></td>
+          <td>
+            <span> <i class="fa-solid fa-trash"></i></span>
+          </td>
+        </tr>
+        <!-- Este tr debe ser replicado por cada tarea (pendiente) -->
+      </table>
+    </section>
+    <script src="./assets/js/script.js"></script>
+    <!-- <script>
       const a = [1, 2, 3, 4, 5, 6];
       a.push("Hola"); //agregar al final
       a.unshift("Hola"); //agregar al inicio
@@ -29,6 +72,6 @@
       );
       tallasDisponibles2.splice(index, 1);
       console.log(tallasDisponibles2);
-    </script>
+    </script> -->
   </body>
 </html>

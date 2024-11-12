@@ -1,0 +1,10 @@
+table, th, td{
+    border: solid black 2px;
+}
+
+.tareas-incompletas{
+    background-color: red;
+}
+.tareas-completadas{
+    background-color: red;
+}
