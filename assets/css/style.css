@@ -1,5 +1,53 @@
+.container{
+    display: grid;
+  grid-template-columns: 1fr 2fr;
+  grid-template-rows: 1fr 5fr;
+  gap: 0px 0px;
+  grid-auto-flow: row;
+  grid-template-areas:
+    "titulo lista"
+    "controles lista";
+    justify-content: stretch;
+    width: 0 20% 0 20%;
+}
+
+.nueva-tarea { 
+    background-color: green;
+    grid-area: titulo; 
+    grid-column: 1;
+    grid-row: 1; 
+    justify-self: center;
+    align-self: center;
+    gap: 15px 10px;
+    width: 100%;
+}
+
+.contador-tareas { 
+    background-color: aqua;
+    grid-area: controles;
+    grid-column: 1; 
+    grid-row: 2;
+    justify-self: center;
+    align-self: start;
+    width: 100%;
+    padding-top: 20%;
+}
+
+.lista-tareas { 
+    background-color: blueviolet;
+    grid-area: lista;
+    grid-column: 2;
+    grid-row: 1 span 2;
+    justify-self: center;
+    align-self: start;
+    width: 100%;
+}
+
+
+
 table, th, td{
     border: solid black 2px;
+    width: 100%;
 }
 
 .tareas-incompletas{
