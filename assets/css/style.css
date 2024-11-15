@@ -1,7 +1,7 @@
 .container{
     display: grid;
   grid-template-columns: 1fr 2fr;
-  grid-template-rows: 1fr 5fr;
+  grid-template-rows: 1fr 7fr;
   gap: 0px 0px;
   grid-auto-flow: row;
   grid-template-areas:
@@ -12,18 +12,18 @@
 }
 
 .nueva-tarea { 
-    background-color: green;
     grid-area: titulo; 
     grid-column: 1;
     grid-row: 1; 
     justify-self: center;
-    align-self: center;
+    align-self: start;
     gap: 15px 10px;
     width: 100%;
+    padding-bottom: 10px;
 }
 
 .contador-tareas { 
-    background-color: aqua;
+    border-top: solid gray 2px;
     grid-area: controles;
     grid-column: 1; 
     grid-row: 2;
@@ -31,21 +31,29 @@
     align-self: start;
     width: 100%;
     padding-top: 20%;
-}
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;}
 
 .lista-tareas { 
-    background-color: blueviolet;
+    border-top: solid gray 2px;
+    background-color: rgb(234, 232, 232);
     grid-area: lista;
     grid-column: 2;
-    grid-row: 1 span 2;
+    grid-row: 2;
     justify-self: center;
     align-self: start;
     width: 100%;
+    height: 100vh;
+    padding-left: 20%;
+    padding-right: 20%;
+    padding-top: 10%;
 }
 
 
 
-table, th, td{
+table{
     border: solid black 2px;
     width: 100%;
 }
@@ -55,4 +63,11 @@ table, th, td{
 }
 .tareas-completadas{
     background-color: red;
+}
+
+.col-double{
+    width: 70%;
+}
+.col-simple{
+    width:10%;
 }

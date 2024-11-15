@@ -21,10 +21,10 @@
     const labelrealizadas = document.getElementById('strong-realizadas');
     const tabla = document.getElementById('tabla-tareas').tBodies[0];
     const encabezado = `<tr>
-            <th>Completar</th>
-            <th>Id</th>
-            <th>Tarea</th>
-            <th>Borrar</th>
+            <th class='col-simple'>Completar</th>
+            <th class='col-simple'>Id</th>
+            <th class='col-double'>Tarea</th>
+            <th class='col-simple'>Borrar</th>
             </tr>`
 //#endregion
 //#region funciones
